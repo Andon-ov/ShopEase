@@ -1,0 +1,25 @@
+.nav .nav__ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.nav .nav__ul .nav__li {
+    padding: 7px;
+  background-color: rgb(0, 0, 0);
+}
+
+.nav .nav__ul .nav__li .nav__link {
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav .nav__ul .nav__li .nav__link:hover {
+  background-color: antiquewhite;
+  color: black;
+}
