@@ -1,16 +1,33 @@
-import './Header.css';
-import Nav from './Nav/Nav';
 
+import React, { useState, useEffect } from 'react';
+import './Header.css';
+import logo from './../../assets/logo.png';
 
 function Header() {
-    return (<section className="header">
-        <div className='logo'>
-            <h1>Leather Market</h1>
-            <p>Genius leather Shop</p>
-        </div>
+  const [isActive, setIsActive] = useState(false);
 
-        <Nav />
-    </section>);
+  // Add a scroll event listener to check when the header becomes active
+  useEffect(() => {
+    const handleScroll = () => {
+      const shouldActivateHeader = window.scrollY > 0;
+      setIsActive(shouldActivateHeader);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+    <section className={`header ${isActive ? 'active' : ''}`}>
+      <div className='header__logo'>
+        <img src={logo} alt="logo" />
+      </div>
+    </section>
+  );
 }
 
 export default Header;

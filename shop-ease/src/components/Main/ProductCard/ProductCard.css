@@ -1,60 +1,64 @@
-.product-card {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    max-width: 500px;
-    margin: 10px;
-  }
-  
-  .product-card img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 4px;
-  }
-  
-  .product-name {
-    margin-top: 10px;
-  }
-  
-  .product-description {
-    color: #888;
-  }
-  
-  .product-price {
-    margin: 10px 0;
-  }
-  
-  .original-price {
-    text-decoration: line-through;
-    margin-right: 10px;
-  }
-  
-  .discounted-price {
-    color: #f00;
-    font-weight: bold;
-  }
-  
-  .product-ratings {
-    /* Style the rating stars here */
-  }
-  
-  .add-to-cart-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .success-alert {
-    background-color: #28a745;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 4px;
-    margin-top: 10px;
-    display: none;
-  }
-  
+.product__card {
+  border-radius: 4px;
+  padding: 10px;
+  max-width: 300px;
+  max-height: 500px;
+  margin: 10px;
+}
+
+.product__card:hover {
+  border: 1px solid black;
+}
+
+.product__card img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.product__card .product__name {
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.product__card .product__description {
+  color: #888;
+}
+
+.product__card .product__price {
+  margin: 10px 0;
+}
+
+.product__card .product__price .price__original {
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.product__card .product__price .price__discounted {
+  color: #f00;
+  font-weight: bold;
+}
+
+.product__card .product__ratings .ratings {
+  background-color: #28a745;
+}
+
+.product__card .product__button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.success__alert {
+  background-color: #28a745;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+  display: none;
+}

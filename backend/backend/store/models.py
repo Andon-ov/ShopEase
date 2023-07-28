@@ -1,11 +1,19 @@
 from django.db import models
 
-CATEGORY_CHOICES = (
-    ('LEATHER BAGS', 'Leather Bags'),
-    ('BELTS', 'Belts'),
-    ('WALLETS', 'Wallets'),
-    ('LEATHER PRODUCTS', 'Leather Products'),
-)
+
+class Category(models.Model):
+    NAME_MAX_LEN = 100
+
+    name = models.CharField(
+        max_length=NAME_MAX_LEN
+    )
+    description = models.TextField()
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
+    def __str__(self):
+        return self.name
 
 
 class Product(models.Model):
@@ -40,12 +48,11 @@ class Product(models.Model):
 
     ratings = models.PositiveIntegerField(
         default=0,
-        # help_text="Ratings stars"
     )
 
-    category = models.CharField(
-        max_length=CATEGORY_MAX_LEN,
-        choices=CATEGORY_CHOICES
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.CASCADE,
     )
 
     def __str__(self):

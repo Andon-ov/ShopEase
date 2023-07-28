@@ -6,8 +6,8 @@ const url = 'http://localhost:8000/';
 
 export const getAll = () => {
     return fetch(url + '/products/')
-        .then((res) =>  res.json());
-       
+        .then((res) => res.json());
+
 };
 
 
@@ -16,3 +16,4 @@ export const getOne = (productsId) => {
     return fetch(`${url}/products/${productsId}/`)
         .then((res) => res.json());
 };
+

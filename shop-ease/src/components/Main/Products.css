@@ -1,5 +1,30 @@
-.products__grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+.products .products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.products__sort {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.products__button {
+  display: flex;
+  justify-content: center;
+}
+.products__button .loadMoreBtn {
+  border: 1px solid antiquewhite;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: antiquewhite;
+  color: black;
+  transition: 0.3s;
+}
+
+.products__button .loadMoreBtn:hover {
+  font-weight: bolder;
+  background-color: black;
+  color: antiquewhite;
+  border: 1px solid antiquewhite;
 }
