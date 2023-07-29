@@ -6,8 +6,6 @@ function Nav({ onCategoryClick, selectedCategory }) {
     onCategoryClick(category);
   };
 
-
-
   const defaultCategory = selectedCategory || 'LEATHER BAGS';
 
   return (

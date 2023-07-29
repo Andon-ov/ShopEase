@@ -26,8 +26,8 @@ function Products({ selectedCategory }) {
         // I did mapping on the categories because I created the app this way and then I changed the base
         const categoryMapping = {
           1: 'LEATHER BAGS',
-          2: 'WALLETS',
-          3: 'BELTS',
+          2: 'BELTS',
+          3: 'WALLETS',
           4: 'LEATHER PRODUCTS',
         };
         const productsWithTextCategory = products.map((product) => ({
