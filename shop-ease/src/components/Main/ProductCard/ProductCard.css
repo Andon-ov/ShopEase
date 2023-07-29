@@ -80,7 +80,6 @@
   color: antiquewhite;
 }
 
-
 .card__header {
   overflow: hidden;
 }
@@ -104,5 +103,5 @@
   color: white;
   padding: 10px 20px;
   border-radius: 4px;
-  z-index: 9999; 
+  z-index: 9999;
 }
