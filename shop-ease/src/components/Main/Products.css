@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  margin-bottom: 80px;
 }
 .products__sort {
   display: flex;

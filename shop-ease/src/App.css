@@ -26,6 +26,7 @@ body {
   top: 0;
   box-shadow: var(--mainShadow);
   margin-bottom: 50px;
+  z-index: 1000;
 }
 
 .wrapper {

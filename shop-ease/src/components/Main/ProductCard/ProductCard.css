@@ -1,33 +1,43 @@
 .product__card {
   border-radius: 4px;
-  padding: 10px;
   max-width: 300px;
-  max-height: 500px;
+  max-height: 900px;
   margin: 10px;
-}
 
-.product__card:hover {
-  border: 1px solid black;
+  display: grid;
+  grid-template-rows: 250px 300px 100px;
+
+  box-shadow: 2px 0px 30px -8px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  border-radius: 15px;
 }
 
 .product__card img {
   width: 100%;
   max-height: 300px;
   object-fit: cover;
-  border-radius: 4px;
+  /* border-radius: 4px; */
+  object-position: center;
 }
 
 .product__card .product__name {
-  margin-top: 10px;
+  margin-bottom: 5px;
   text-transform: uppercase;
 }
-
 .product__card .product__description {
   color: #888;
+  font-size: 14px;
+  text-align: center;
 }
 
 .product__card .product__price {
-  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  font-weight: bold;
+  bottom: 0;
+  left: 0;
 }
 
 .product__card .product__price .price__original {
@@ -37,28 +47,62 @@
 
 .product__card .product__price .price__discounted {
   color: #f00;
-  font-weight: bold;
 }
-
+.product__card .product__ratings {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: -50px;
+  left: 0;
+}
 .product__card .product__ratings .ratings {
-  background-color: #28a745;
+  color: gold;
+  letter-spacing: 10px;
+  font-size: 34px;
 }
 
 .product__card .product__button {
-  background-color: #007bff;
-  color: #fff;
+  background-color: antiquewhite;
+  color: black;
   border: none;
   padding: 10px 20px;
-  border-radius: 4px;
   cursor: pointer;
   margin-top: 10px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+}
+.product__card .product__button:hover {
+  font-weight: bolder;
+  background-color: black;
+  color: antiquewhite;
 }
 
-.success__alert {
-  background-color: #28a745;
-  color: #fff;
-  padding: 5px 10px;
+
+.card__header {
+  overflow: hidden;
+}
+
+.card__body {
+  padding: 0 20px 20px 20px;
+  position: relative;
+}
+
+.card__footer {
+  position: relative;
+  width: 100%;
+}
+
+.custom__alert {
+  position: fixed;
+  top: 5.8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
   border-radius: 4px;
-  margin-top: 10px;
-  display: none;
+  z-index: 9999; 
 }

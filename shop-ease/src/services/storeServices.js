@@ -17,3 +17,7 @@ export const getOne = (productsId) => {
         .then((res) => res.json());
 };
 
+export const getAllCategories = () => {
+    return fetch(`${url}/categories/`)
+        .then((res) => res.json());
+};

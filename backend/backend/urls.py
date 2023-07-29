@@ -1,15 +1,16 @@
 
-from django.urls import path, include
+from django.urls import path
 from django.contrib import admin
-from rest_framework.routers import DefaultRouter
 
-from backend.store.views import ProductViewSet
-
-router = DefaultRouter()
-router.register(r'products', ProductViewSet, basename='product')
+from django.urls import path
+from backend.store.views import CategoryListView, CategoryRetrieveView, ProductListView, ProductRetrieveView
 
 urlpatterns = [
+    path('categories/', CategoryListView.as_view(), name='category-list'),
+    path('categories/<int:pk>/', CategoryRetrieveView.as_view(),
+         name='category-retrieve'),
+    path('products/', ProductListView.as_view(), name='product-list'),
+    path('products/<int:pk>/', ProductRetrieveView.as_view(),
+         name='product-retrieve'),
     path("admin/", admin.site.urls),
-    path('', include(router.urls)),
 ]
-
