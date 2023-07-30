@@ -1,18 +1,19 @@
 .header {
-  width: 80%;
-  margin: auto;
-  background-color: white;
-  transition: top 1s ease-in-out;
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    transition: top 1s ease-in-out;
 }
 
 .header .header__logo {
-  width: 250px;
-  padding: 20px 0;
+    width: 250px;
+    padding: 20px 0;
 }
 
 .header.active {
-  height: 100px;
+    height: 100px;
 }
+
 .header.active .header__logo {
-  width: 180px;
+    width: 180px;
 }

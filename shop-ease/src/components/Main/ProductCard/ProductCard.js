@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import "./ProductCard.css";
 
 import Ratings from "../Ratings";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({product}) => {
     // id,image_url,name,product_color,short_description,price,discounted_price,ratings,category
 
     const [showAlert, setShowAlert] = useState(false);
@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
     return (
         <div className="product__card">
             <div className="card__header">
-                <img src={product.image_url} alt="Product" />
+                <img src={product.image_url} alt="Product"/>
             </div>
             <div className="card__body">
                 <h2 className="product__name">{product.name}</h2>
@@ -41,7 +41,7 @@ const ProductCard = ({ product }) => {
                 </p>
 
                 <div className="product__ratings">
-                    <Ratings rating={product.ratings} />
+                    <Ratings rating={product.ratings}/>
                 </div>
             </div>
             <div className="card__footer">

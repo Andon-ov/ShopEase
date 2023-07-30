@@ -1,107 +1,111 @@
 .product__card {
-  border-radius: 4px;
-  max-width: 300px;
-  max-height: 900px;
-  margin: 10px;
+    border-radius: 4px;
+    max-width: 300px;
+    max-height: 900px;
+    margin: 10px;
 
-  display: grid;
-  grid-template-rows: 250px 300px 100px;
+    display: grid;
+    grid-template-rows: 250px 300px 100px;
 
-  box-shadow: 2px 0px 30px -8px rgba(0, 0, 0, 0.75);
-  overflow: hidden;
-  border-radius: 15px;
+    box-shadow: 2px 0px 30px -8px rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+    border-radius: 15px;
 }
 
 .product__card img {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  /* border-radius: 4px; */
-  object-position: center;
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    /* border-radius: 4px; */
+    object-position: center;
 }
 
 .product__card .product__name {
-  margin-bottom: 5px;
-  text-transform: uppercase;
+    margin-bottom: 5px;
+    text-transform: uppercase;
 }
+
 .product__card .product__description {
-  color: #888;
-  font-size: 14px;
-  text-align: center;
+    color: #888;
+    font-size: 14px;
+    text-align: center;
 }
 
 .product__card .product__price {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  font-weight: bold;
-  bottom: 0;
-  left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    font-weight: bold;
+    bottom: 0;
+    left: 0;
 }
 
 .product__card .product__price .price__original {
-  text-decoration: line-through;
-  margin-right: 10px;
+    text-decoration: line-through;
+    margin-right: 10px;
 }
 
 .product__card .product__price .price__discounted {
-  color: #f00;
+    color: #f00;
 }
+
 .product__card .product__ratings {
-  position: absolute;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  bottom: -50px;
-  left: 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: -50px;
+    left: 0;
 }
+
 .product__card .product__ratings .ratings {
-  color: gold;
-  letter-spacing: 10px;
-  font-size: 34px;
+    color: gold;
+    letter-spacing: 10px;
+    font-size: 34px;
 }
 
 .product__card .product__button {
-  background-color: antiquewhite;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  margin-top: 10px;
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
+    background-color: antiquewhite;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
 }
+
 .product__card .product__button:hover {
-  font-weight: bolder;
-  background-color: black;
-  color: antiquewhite;
+    font-weight: bolder;
+    background-color: black;
+    color: antiquewhite;
 }
 
 .card__header {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .card__body {
-  padding: 0 20px 20px 20px;
-  position: relative;
+    padding: 0 20px 20px 20px;
+    position: relative;
 }
 
 .card__footer {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
 
 .custom__alert {
-  position: fixed;
-  top: 5.8%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  z-index: 9999;
+    position: fixed;
+    top: 5.8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 9999;
 }

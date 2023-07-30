@@ -1,20 +1,20 @@
 .category__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 100px;
 }
 
 .header__title {
-  text-align: center;
-  background-color: white;
-  font-size: 36px;
-  margin-bottom: 20px;
+    text-align: center;
+    background-color: white;
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 .header__descriptions {
-  color: rgb(139, 141, 141);
-  text-align: center;
-  width: 60%;
+    color: rgb(139, 141, 141);
+    text-align: center;
+    width: 60%;
 }

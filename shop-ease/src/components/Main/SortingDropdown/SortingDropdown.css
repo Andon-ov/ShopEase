@@ -1,13 +1,13 @@
 .sorting__by {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 #sorting {
-  padding: 5px 10px;
-  background-color: white;
-  border-radius: unset;
-  border: unset;
-  outline: unset;
-  border-bottom: 1px solid black;
-  cursor: pointer;
+    border-radius: unset;
+    border: unset;
+    padding: 5px 10px;
+    background-color: white;
+    outline: unset;
+    border-bottom: 1px solid black;
+    cursor: pointer;
 }

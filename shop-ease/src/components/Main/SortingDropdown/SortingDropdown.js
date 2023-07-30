@@ -1,7 +1,7 @@
 import React from 'react';
 import './SortingDropdown.css';
 
-const SortingDropdown = ({ onSortChange }) => {
+const SortingDropdown = ({onSortChange}) => {
     const handleSortChange = (event) => {
         onSortChange(event.target.value);
     };
