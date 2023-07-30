@@ -20,6 +20,7 @@ function Products({selectedCategory}) {
 
     // State to keep track of the number of products displayed in the grid
     const [loadCount, setLoadCount] = useState(9);
+    console.log(loadCount)
 
     // Number of products to load per "Load More" click
     const productsPerLoad = 9;
@@ -30,6 +31,11 @@ function Products({selectedCategory}) {
 
     // State to store the min and max price values for the slider
     const [selectedPriceRange, setSelectedPriceRange] = useState([0, 1000]);
+
+
+    // Counter for the number of products in the grid
+    const [productsInGrid, setProductsInGrid] = useState(0);
+
 
 
     // Function to handle price slider change
@@ -164,6 +170,13 @@ function Products({selectedCategory}) {
     const displayedProducts = sortedProducts.slice(0, loadCount);
 
 
+    // count products:
+    useEffect(() => {
+        // Update the product counters whenever displayedProducts or sortedProducts change
+        setProductsInGrid(displayedProducts.length);
+    }, [displayedProducts, sortedProducts]);
+
+
 // Function to handle color filter change
     const handleColorChange = (color) => {
         setSelectedColor(color);
@@ -201,6 +214,11 @@ function Products({selectedCategory}) {
         {/* Sorting dropdown component */}
         <div className='products__sort'>
             <SortingDropdown onSortChange={handleSortChange}/>
+        </div>
+
+        {/* Display product counters */}
+        <div className='products__counters'>
+            <span>Products in Grid: {productsInGrid}</span>
         </div>
 
         {/* Price filter with slider */}

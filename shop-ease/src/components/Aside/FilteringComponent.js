@@ -3,13 +3,16 @@ import './FilteringComponent.css';
 const FilteringComponent = () => {
 
     return (
-        <div className="filters">
+        <div className='filters'>
+            <div className='filters__sticky'>
+                <h1>Filters</h1>
 
-            <h3>Filter By</h3>
-            {/* TODO */}
+            </div>
+
         </div>
-
     )
 };
 
 export default FilteringComponent;
+
+//
