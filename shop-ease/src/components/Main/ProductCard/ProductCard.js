@@ -21,42 +21,44 @@ const ProductCard = ({product}) => {
 
     return (
         <div className="product__card">
-            <div className="card__header">
+
+            <div className="card__image">
                 <img src={product.image_url} alt="Product"/>
             </div>
-            <div className="card__body">
-                <h2 className="product__name">{product.name}</h2>
-                <p className="product__description">{product.short_description}</p>
-                <p className="product__price">
-                    {product.discounted_price ? (
-                        <>
-                            <span className="price__original">${product.price}</span>
-                            <span className="price__discounted">
+
+            <div className="card__title">
+                <h2 >{product.name}</h2>
+            </div>
+
+
+            <div className="card__description">
+                <p>{product.short_description}</p>
+            </div>
+            <div className="card__price">
+
+                {product.discounted_price ? (<>
+                    <span className="price__original">${product.price}</span>
+                    <span className="price__discounted">
                                 ${product.discounted_price}
                             </span>
-                        </>
-                    ) : (
-                        <span>${product.price}</span>
-                    )}
-                </p>
-
-                <div className="product__ratings">
-                    <Ratings rating={product.ratings}/>
-                </div>
+                </>) : (<span>${product.price}</span>)}
             </div>
+
+
+            <div className="card__ratings">
+                <Ratings rating={product.ratings}/>
+            </div>
+
             <div className="card__footer">
                 <button className="product__button" onClick={handleAddToCart}>
                     Add to Cart
                 </button>
 
-                {showAlert && (
-                    <div className="custom__alert">
-                        Product added to cart
-                    </div>
-                )}
+                {showAlert && (<div className="custom__alert">
+                    Product added to cart
+                </div>)}
             </div>
-        </div>
-    );
+        </div>);
 };
 
 export default ProductCard;

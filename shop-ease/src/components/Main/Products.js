@@ -1,47 +1,50 @@
+// Built-in modules or libraries
 import React, {useEffect, useState} from 'react';
 
-import {Slider} from 'antd';
+// Third-party libraries
+import InputSlider from 'react-input-slider';
 
+// Local components and modules
 import ColorFilter from './ColorFilter';
-
 import SortingDropdown from './../Main/SortingDropdown/SortingDropdown';
 import ProductCard from './ProductCard/ProductCard';
 import * as storeServices from '../../services/storeServices';
 
+// Stylesheets (if applicable)
 import './Products.css';
 
 function Products({selectedCategory}) {
+
     // State to store the products fetched from the API
     const [products, setProducts] = useState([]);
 
-    // State to store the currently selected color
-    const [selectedColor, setSelectedColor] = useState('');
-
-
+    // Load more start here -----------------------------------------------------------------------
     // State to keep track of the number of products displayed in the grid
     const [loadCount, setLoadCount] = useState(9);
-    console.log(loadCount)
 
     // Number of products to load per "Load More" click
     const productsPerLoad = 9;
+
+    // Function to handle "Load More" button click
+    const handleLoadMoreClick = () => {
+        setLoadCount((prevLoadCount) => prevLoadCount + productsPerLoad);
+    };
+
+    // Fetch the products from the API on component mount and whenever the category changes
+    useEffect(() => {
+        // Reset loadCount to the initial value (9) whenever the category changes
+        setLoadCount(9);
+    }, [selectedCategory]);
+
+    // Load more end here -----------------------------------------------------------------------
+
 
     // State to store the currently selected sorting option
     const [sortingOption, setSortingOption] = useState('name-asc');
 
 
-    // State to store the min and max price values for the slider
-    const [selectedPriceRange, setSelectedPriceRange] = useState([0, 1000]);
-
-
     // Counter for the number of products in the grid
     const [productsInGrid, setProductsInGrid] = useState(0);
-
-
-
-    // Function to handle price slider change
-    const handlePriceSliderChange = (values) => {
-        setSelectedPriceRange(values);
-    };
 
 
     // Fetch the products from the API on component mount
@@ -66,6 +69,31 @@ function Products({selectedCategory}) {
     // Default category to be shown when no category is selected
     const defaultCategory = 'LEATHER BAGS';
 
+
+    // filters start here! -------------------------------------------------------------------------------------------
+
+    // State to store the currently selected color
+    const [selectedColor, setSelectedColor] = useState('');
+
+    // State to store the min and max price values for the slider
+    const defaultCategoryMaxPrice = 600
+    const defaultCategoryMinPrice = 0
+
+    // State to store the min and max price values for the slider
+    const [selectedPriceRange, setSelectedPriceRange] = useState([defaultCategoryMinPrice, defaultCategoryMaxPrice]);
+
+    // // Function to handle price slider change
+    // const handlePriceSliderChange = (values) => {
+    //     setSelectedPriceRange(values);
+    // };
+
+    // Function to reset filters
+    const handleResetFilters = () => {
+        setSelectedColor(''); // Reset selected color
+        setSelectedPriceRange([0, sliderMax]); // Reset selected price range
+    };
+
+
     // Filter the products based on the selected category, selected color, and selected price range
     const filteredProducts = products.filter((product) => {
         const isCategoryMatch = selectedCategory ? product.category === selectedCategory : product.category === defaultCategory;
@@ -87,10 +115,10 @@ function Products({selectedCategory}) {
         return isCategoryMatch && isColorMatch && isPriceMatch;
     });
 
-
+    // wen change category reset the filter
     useEffect(() => {
         setSelectedColor('');
-        setSelectedPriceRange([0, 1000]);
+        setSelectedPriceRange([defaultCategoryMinPrice, defaultCategoryMaxPrice]);
     }, [selectedCategory]);
 
 
@@ -99,20 +127,53 @@ function Products({selectedCategory}) {
     }, [selectedCategory]);
 
 
-// Create a function to find all unique colors to filter:
+    // Create a function to find all unique colors to filter:
     const getUniqueColors = () => {
         const uniqueColors = [...new Set(filteredProducts.map((product) => product.product_color))];
         return uniqueColors;
     };
 
-// Get the list of unique colors for the selected category
+    // Get the list of unique colors for the selected category
     const colorOptions = getUniqueColors();
 
 
-// Function to handle "Load More" button click
-    const handleLoadMoreClick = () => {
-        setLoadCount((prevLoadCount) => prevLoadCount + productsPerLoad);
+    // Function to handle color filter change
+    const handleColorChange = (color) => {
+        setSelectedColor(color);
     };
+
+
+    // Function to retrieve a valid price from the product
+    const getPriceFromProduct = (product) => {
+        if ('discounted_price' in product && product.discounted_price !== null) {
+            return parseFloat(product.discounted_price);
+        } else if ('price' in product && product.price !== null) {
+            return parseFloat(product.price);
+        }
+        return null;
+    };
+
+    // Calculate the valid prices from all products
+    const validPrices = filteredProducts
+        .map((product) => getPriceFromProduct(product))
+        .filter((price) => !isNaN(price) && price !== null);
+
+    // Calculate minimum and maximum price
+    const minPrice = Math.min(...validPrices);
+    const maxPrice = Math.max(...validPrices);
+
+    // Set bounds for the slider
+    const sliderMin = isNaN(minPrice) ? minPrice : defaultCategoryMinPrice;
+    const sliderMax = isNaN(maxPrice) ? maxPrice : defaultCategoryMaxPrice;
+
+
+    console.log(` function minPrice ${minPrice} maxPrice ${maxPrice}`)
+    // sortedProducts.forEach(x => console.log(`Products in this category discounted_price ${x.discounted_price} price${x.price}`))
+
+
+    // Filters end here! -------------------------------------------------------------------------------------------
+
+
 
 
     const sortProducts = (products, option) => {
@@ -177,86 +238,77 @@ function Products({selectedCategory}) {
     }, [displayedProducts, sortedProducts]);
 
 
-// Function to handle color filter change
-    const handleColorChange = (color) => {
-        setSelectedColor(color);
-    };
+    return (
+        <main className='products'>
+
+            {/*Filters*/}
+            <aside className="filters">
+
+                <div className='filters__sticky'>
+                    <h1>Filters</h1>
+
+                    {/* Price filter with react-input-slider */}
+                    <h3>Price Range:</h3>
+
+                    <InputSlider
+                        axis='x'
+                        x={selectedPriceRange[0]} // Set the x value to the starting value
+                        xmin={defaultCategoryMinPrice}
+                        xmax={maxPrice}
+                        xstep={10}
+                        onChange={(position) => setSelectedPriceRange([position.x, selectedPriceRange[1]])}
+                        // Update the selectedPriceRange with the new value of the slider
+                    />
+                    <br/>
 
 
-    // Function to retrieve a valid price from the product
-    const getPriceFromProduct = (product) => {
-        if ('discounted_price' in product && product.discounted_price !== null) {
-            return parseFloat(product.discounted_price);
-        } else if ('price' in product && product.price !== null) {
-            return parseFloat(product.price);
-        }
-        return null;
-    };
+                    {/* Display the selected price range */}
+                    <span>{`Price: ${selectedPriceRange[0]} - ${selectedPriceRange[1]}`}</span>
 
-// Calculate the valid prices from all products
-    const validPrices = filteredProducts
-        .map((product) => getPriceFromProduct(product))
-        .filter((price) => !isNaN(price) && price !== null);
+                    {/* Color filter with radio buttons */}
 
-    // Calculate minimum and maximum price
-    const minPrice = Math.min(...validPrices);
-    const maxPrice = Math.max(...validPrices);
+                    <ColorFilter
+                        colors={colorOptions}
+                        selectedColor={selectedColor}
+                        onColorChange={handleColorChange}
+                    />
+                    {/* Reset Filters button */}
+                    <div className="button__wrapper">
+                    <button className='resetFiltersBtn' onClick={handleResetFilters}>
+                        Reset Filters
+                    </button>
+                    </div>
+                    {/* Display product counters */}
+                    <div className='products__counters'>
+                        <span>Products in Grid: {productsInGrid}</span>
+                    </div>
 
-// Set bounds for the slider
-    const sliderMin = isNaN(minPrice) ? 0 : minPrice;
-    const sliderMax = isNaN(maxPrice) ? 1000 : maxPrice;
-
-
-    console.log(` function minPrice ${minPrice} maxPrice ${maxPrice}`)
-    // sortedProducts.forEach(x => console.log(`Products in this category discounted_price ${x.discounted_price} price${x.price}`))
-
-    return (<section className='products'>
-        {/* Sorting dropdown component */}
-        <div className='products__sort'>
-            <SortingDropdown onSortChange={handleSortChange}/>
-        </div>
-
-        {/* Display product counters */}
-        <div className='products__counters'>
-            <span>Products in Grid: {productsInGrid}</span>
-        </div>
-
-        {/* Price filter with slider */}
-        <div className='products__price-filter'>
-            <h3>Price Range:</h3>
-
-            <Slider
-                range
-                min={0}
-                max={600}
-                step={10}
-                value={selectedPriceRange}
-                onChange={handlePriceSliderChange}
-            />
+                </div>
 
 
-            {/* Display the selected price range */}
-            <span>{`Price: ${selectedPriceRange[0]} - ${selectedPriceRange[1]}`}</span>
-        </div>
+            </aside>
 
-        {/* Color filter with radio buttons */}
-        <ColorFilter
-            colors={colorOptions}
-            selectedColor={selectedColor}
-            onColorChange={handleColorChange}
-        />
 
-        {/* Product grid */}
-        <div className='products__grid'>
-            {displayedProducts?.map((product) => (<ProductCard key={product.id} product={product}/>))}
-        </div>
+            {/* Product grid */}
+            <section className="grid__wrapper">
+                {/* Sorting dropdown component */}
+                <div className='products__sort'>
+                    <SortingDropdown onSortChange={handleSortChange}/>
+                </div>
 
-        {/* "Load More" button */}
-        <div className='products__button'>
-            {displayedProducts.length < sortedProducts.length && (
-                <button className='loadMoreBtn' onClick={handleLoadMoreClick}>Load More</button>)}
-        </div>
-    </section>);
+
+                <div className='products__grid'>
+                    {displayedProducts?.map((product) => (<ProductCard key={product.id} product={product}/>))}
+                </div>
+                {/* "Load More" button */}
+                <div className='products__button'>
+                    {displayedProducts.length < sortedProducts.length && (
+                        <button className='loadMoreBtn' onClick={handleLoadMoreClick}>Load More</button>)}
+                </div>
+            </section>
+
+
+        </main>);
 }
 
 export default Products;

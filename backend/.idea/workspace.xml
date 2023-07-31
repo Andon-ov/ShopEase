@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f9e131a4-c45a-4dc3-aaa5-5236a6ab02bb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/ShopEase.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-ease/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-ease/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-ease/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-ease/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/src/components/Aside/FilteringComponent.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/src/components/Aside/FilteringComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/src/components/Header/CategoryHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-ease/src/components/Header/CategoryHeader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/src/components/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-ease/src/components/Header/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/src/components/Main/ProductCard/ProductCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-ease/src/components/Main/ProductCard/ProductCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/src/components/Main/ProductCard/ProductCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-ease/src/components/Main/ProductCard/ProductCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/src/components/Main/Products.css" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-ease/src/components/Main/Products.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/src/components/Main/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-ease/src/components/Main/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/src/components/Main/Ratings.js" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-ease/src/components/Main/Ratings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/src/components/Nav/Nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-ease/src/components/Header/Nav/Nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shop-ease/src/components/Nav/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/../shop-ease/src/components/Header/Nav/Nav.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2THwFYAN33Ib7h3T4UlEQDwCdpY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="backend" type="Python.DjangoServer" factoryName="Django server">
+      <module name="backend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="backend.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f9e131a4-c45a-4dc3-aaa5-5236a6ab02bb" name="Changes" comment="" />
+      <created>1690713214989</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690713214989</updated>
+      <workItem from="1690713218689" duration="2897000" />
+      <workItem from="1690728530959" duration="2125000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

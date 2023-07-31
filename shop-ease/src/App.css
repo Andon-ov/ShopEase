@@ -1,37 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=family=Roboto&Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 
 :root {
-  --mainWhiteColor: rgb(255, 255, 255);
-  --mainBlack: rgb(0, 0, 0);
+    --mainWhiteColor: rgb(255, 255, 255);
+    --mainBlack: rgb(0, 0, 0);
 
-  --mainShadowColor: 82, 111, 63;
+    --mainColor: #faebd7;
 
-  --mainTextColor: black;
-
-  --mainBntTextColor: white;
-  --hoverBntColor: white;
-
-  --mainShadow: 0 10px 20px 0 rgba(109, 109, 109, 0.45);
+    --mainShadow: 0 10px 20px 0 rgba(109, 109, 109, 0.45);
+    --cardShadow: 2px 0px 30px -8px rgba(0, 0, 0, 0.75);
 }
 
+h2 {
+    font-family: 'Roboto', sans-serif;
 
+}
 
 body {
-  font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
+
 }
 
-.sticky {
-  position: sticky;
-  top: 0;
-  box-shadow: var(--mainShadow);
-  margin-bottom: 50px;
-  z-index: 1000;
-}
-
-.wrapper {
-  width: 80%;
-  display: flex;
-  margin: auto;
-  margin-bottom: 40px;
-}

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c1e41f00-3763-49f1-ab9b-f61e7f0f9472" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ShopEase.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/backend/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/components/Aside/FilteringComponent.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/components/Aside/FilteringComponent.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/src/components/Footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/components/Header/CategoryHeader.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/src/components/Header/CategoryHeader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/components/Header/CategoryHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/src/components/Header/CategoryHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/components/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/src/components/Header/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/components/Main/ProductCard/ProductCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/src/components/Main/ProductCard/ProductCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/components/Main/ProductCard/ProductCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/src/components/Main/ProductCard/ProductCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/components/Main/Products.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/src/components/Main/Products.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/components/Main/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/src/components/Main/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/components/Main/Ratings.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/src/components/Main/Ratings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/components/Nav/Nav.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/src/components/Header/Nav/Nav.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop-ease/src/components/Nav/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop-ease/src/components/Header/Nav/Nav.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2THwFg8531nOEwnvM7ckcOCRLJo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/shop-ease/src/components/Header" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1e41f00-3763-49f1-ab9b-f61e7f0f9472" name="Changes" comment="" />
+      <created>1690713213672</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690713213672</updated>
+      <workItem from="1690713220572" duration="14459000" />
+      <workItem from="1690728529615" duration="16753000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/shop-ease/src/components/Main/ProductCard/ProductCard.js</url>
+          <line>51</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

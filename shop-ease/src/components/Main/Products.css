@@ -1,5 +1,10 @@
+.products {
+    display: flex;
+}
+
 .products .products__grid {
     display: grid;
+    grid-gap: 10px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     margin-bottom: 80px;
@@ -23,6 +28,7 @@
     background-color: antiquewhite;
     color: black;
     transition: 0.3s;
+    box-shadow: var(--cardShadow);
 }
 
 .products__button .loadMoreBtn:hover {
@@ -30,4 +36,82 @@
     background-color: black;
     color: antiquewhite;
     border: 1px solid antiquewhite;
+}
+
+
+.filters {
+    position: relative;
+    width: 400px;
+    padding: 30px;
+}
+
+.filters__sticky {
+    margin-top: 25px;
+    width: 287px;
+    /*height: 380px;*/
+    background-color: #faebd7;
+    position: sticky;
+    top: 180px;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: var(--cardShadow);
+}
+
+.filters__sticky h1 {
+    text-align: center;
+    padding: 30px;
+}
+
+.product__wrapper {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+
+.grid__wrapper {
+
+}
+
+.color-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.color-filter label input[type='radio'] {
+    background-color: black;
+    margin: 0 5px 5px 0;
+
+}
+
+.resetFiltersBtn {
+    margin: 20px 0;
+    border: 1px solid antiquewhite;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: var(--mainWhiteColor);
+    color: black;
+    transition: 0.3s;
+    box-shadow: var(--cardShadow);
+}
+
+.resetFiltersBtn:hover {
+    font-weight: bolder;
+    background-color: black;
+    color: antiquewhite;
+    border: 1px solid antiquewhite;
+}
+
+.button__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.products__counters  {
+    text-align: center;
+    font-style: italic;
 }

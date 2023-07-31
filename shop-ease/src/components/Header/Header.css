@@ -12,8 +12,20 @@
 
 .header.active {
     height: 100px;
+
 }
 
 .header.active .header__logo {
     width: 180px;
 }
+
+.header__wrapper-sticky {
+    position: sticky;
+    top: 0;
+    box-shadow: var(--mainShadow);
+    margin-bottom: 40px;
+    z-index: 1000;
+    transition: bottom 0.3s ease-in-out;
+
+}
+
