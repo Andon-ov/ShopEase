@@ -2,12 +2,31 @@
     font-size: 12px;
 }
 
-#sorting {
+.sorting__by .sorting__select {
     border-radius: unset;
     border: unset;
     padding: 5px 10px;
-    background-color: white;
+    background-color: var(--mainWhiteColor);
     outline: unset;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--mainBlackColor);
     cursor: pointer;
 }
+
+
+/*.sorting__by {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.sorting__by .sorting__label {*/
+/*    margin-right: 10px;*/
+/*}*/
+
+/*.sorting__by .sorting__select {*/
+/*    outline: unset;*/
+/*    padding: 8px;*/
+/*    border: 3px solid var(--mainColor);*/
+/*    !*border-radius: 4px;*!*/
+/*    cursor: pointer;*/
+/*    background-color: var(--mainColor);*/
+/*}*/

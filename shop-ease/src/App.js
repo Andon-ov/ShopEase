@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './joshwcomeau.css';
 import './App.css';
@@ -7,16 +7,22 @@ import Header from './components/Header/Header';
 import Products from './components/Main/Products';
 import Footer from './components/Footer/Footer';
 import Nav from './components/Header/Nav/Nav';
-import CategoryHeader from './components/Header/CategoryHeader';
+import CategoryHeader from './components/Header/CategoryHeader/CategoryHeader';
 
 function App() {
+
+    const leatherBagsPath = "/leather-bags";
+    const beltsPath = "/belts";
+    const walletsPath = "/wallets";
+    const leatherProductsPath = "/leather-products";
+
+
     // Check if there is a preferred category in localStorage when the app starts
     const defaultCategory = localStorage.getItem('selectedCategory') || 'LEATHER BAGS';
     const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
 
     const handleCategoryClick = (category) => {
         setSelectedCategory(category);
-        // Запазете избраната категория в localStorage
         localStorage.setItem('selectedCategory', category);
     };
 
@@ -37,17 +43,10 @@ function App() {
             <CategoryHeader category={selectedCategory}/>
             <div className='product__wrapper'>
                 <Routes>
-                    <Route path="/leather-bags" element={<Products selectedCategory={selectedCategory}/>}/>
-
-                    <Route path="/belts" element={<Products selectedCategory={selectedCategory}/>}/>
-                    <Route path="/wallets" element={<Products selectedCategory={selectedCategory}/>}/>
-                    <Route path="/leather-products" element={<Products selectedCategory={selectedCategory}/>}/>
-
-                    {/*footer  Route*/}
-                    {/*<Route path="/contact" element={<Contact />} />*/}
-                    {/*<Route path="/advertise" element={<Advertise />} />*/}
-                    {/*<Route path="/terms" element={<Terms />} />*/}
-                    {/*<Route path="/subscriptions" element={<Subscriptions />} />*/}
+                    <Route path={leatherBagsPath} element={<Products selectedCategory={selectedCategory}/>}/>
+                    <Route path={beltsPath} element={<Products selectedCategory={selectedCategory}/>}/>
+                    <Route path={walletsPath} element={<Products selectedCategory={selectedCategory}/>}/>
+                    <Route path={leatherProductsPath} element={<Products selectedCategory={selectedCategory}/>}/>
                 </Routes>
             </div>
             <Footer/>

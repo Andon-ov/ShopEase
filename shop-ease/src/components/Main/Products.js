@@ -4,8 +4,11 @@ import React, {useEffect, useState} from 'react';
 // Third-party libraries
 import InputSlider from 'react-input-slider';
 
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faArrowDown} from '@fortawesome/free-solid-svg-icons';
+
 // Local components and modules
-import ColorFilter from './ColorFilter';
+import ColorFilter from './ColorFilter/ColorFilter';
 import SortingDropdown from './../Main/SortingDropdown/SortingDropdown';
 import ProductCard from './ProductCard/ProductCard';
 import * as storeServices from '../../services/storeServices';
@@ -18,34 +21,8 @@ function Products({selectedCategory}) {
     // State to store the products fetched from the API
     const [products, setProducts] = useState([]);
 
-    // Load more start here -----------------------------------------------------------------------
-    // State to keep track of the number of products displayed in the grid
-    const [loadCount, setLoadCount] = useState(9);
-
-    // Number of products to load per "Load More" click
-    const productsPerLoad = 9;
-
-    // Function to handle "Load More" button click
-    const handleLoadMoreClick = () => {
-        setLoadCount((prevLoadCount) => prevLoadCount + productsPerLoad);
-    };
-
-    // Fetch the products from the API on component mount and whenever the category changes
-    useEffect(() => {
-        // Reset loadCount to the initial value (9) whenever the category changes
-        setLoadCount(9);
-    }, [selectedCategory]);
-
-    // Load more end here -----------------------------------------------------------------------
-
-
-    // State to store the currently selected sorting option
-    const [sortingOption, setSortingOption] = useState('name-asc');
-
-
     // Counter for the number of products in the grid
     const [productsInGrid, setProductsInGrid] = useState(0);
-
 
     // Fetch the products from the API on component mount
     useEffect(() => {
@@ -69,6 +46,27 @@ function Products({selectedCategory}) {
     // Default category to be shown when no category is selected
     const defaultCategory = 'LEATHER BAGS';
 
+    // Load more start here -----------------------------------------------------------------------------------------
+
+    // State to keep track of the number of products displayed in the grid
+    const [loadCount, setLoadCount] = useState(9);
+
+    // Number of products to load per "Load More" click
+    const productsPerLoad = 9;
+
+    // Function to handle "Load More" button click
+    const handleLoadMoreClick = () => {
+        setLoadCount((prevLoadCount) => prevLoadCount + productsPerLoad);
+    };
+
+    // Fetch the products from the API on component mount and whenever the category changes
+    useEffect(() => {
+        // Reset loadCount to the initial value (9) whenever the category changes
+        setLoadCount(9);
+    }, [selectedCategory]);
+
+    // Load more end here -------------------------------------------------------------------------------------------
+
 
     // filters start here! -------------------------------------------------------------------------------------------
 
@@ -76,21 +74,17 @@ function Products({selectedCategory}) {
     const [selectedColor, setSelectedColor] = useState('');
 
     // State to store the min and max price values for the slider
-    const defaultCategoryMaxPrice = 600
+    const defaultCategoryMaxPrice = 250
     const defaultCategoryMinPrice = 0
 
     // State to store the min and max price values for the slider
     const [selectedPriceRange, setSelectedPriceRange] = useState([defaultCategoryMinPrice, defaultCategoryMaxPrice]);
 
-    // // Function to handle price slider change
-    // const handlePriceSliderChange = (values) => {
-    //     setSelectedPriceRange(values);
-    // };
 
     // Function to reset filters
     const handleResetFilters = () => {
         setSelectedColor(''); // Reset selected color
-        setSelectedPriceRange([0, sliderMax]); // Reset selected price range
+        setSelectedPriceRange([defaultCategoryMinPrice, sliderMax]); // Reset selected price range
     };
 
 
@@ -167,14 +161,16 @@ function Products({selectedCategory}) {
     const sliderMax = isNaN(maxPrice) ? maxPrice : defaultCategoryMaxPrice;
 
 
-    console.log(` function minPrice ${minPrice} maxPrice ${maxPrice}`)
+    // console.log(` function minPrice ${minPrice} maxPrice ${maxPrice}`)
     // sortedProducts.forEach(x => console.log(`Products in this category discounted_price ${x.discounted_price} price${x.price}`))
 
 
     // Filters end here! -------------------------------------------------------------------------------------------
 
 
-
+    // Sorting end here! -------------------------------------------------------------------------------------------
+    // State to store the currently selected sorting option
+    const [sortingOption, setSortingOption] = useState('name-asc');
 
     const sortProducts = (products, option) => {
         // Implement the sorting logic based on the selected option
@@ -227,6 +223,7 @@ function Products({selectedCategory}) {
 // Apply sorting to the filtered products
     const sortedProducts = sortProducts(filteredProducts, sortingOption);
 
+
 // Displayed products to show in the grid, based on loadCount
     const displayedProducts = sortedProducts.slice(0, loadCount);
 
@@ -238,77 +235,77 @@ function Products({selectedCategory}) {
     }, [displayedProducts, sortedProducts]);
 
 
-    return (
-        <main className='products'>
+    return (<main className='products'>
 
-            {/*Filters*/}
-            <aside className="filters">
+        {/*Filters*/}
+        <aside className="filters">
 
-                <div className='filters__sticky'>
-                    <h1>Filters</h1>
+            <div className='filters__sticky'>
+                <h1>Filters</h1>
 
-                    {/* Price filter with react-input-slider */}
-                    <h3>Price Range:</h3>
+                {/* Price filter with react-input-slider */}
+                <h3>Price Range:</h3>
 
-                    <InputSlider
-                        axis='x'
-                        x={selectedPriceRange[0]} // Set the x value to the starting value
-                        xmin={defaultCategoryMinPrice}
-                        xmax={maxPrice}
-                        xstep={10}
-                        onChange={(position) => setSelectedPriceRange([position.x, selectedPriceRange[1]])}
-                        // Update the selectedPriceRange with the new value of the slider
-                    />
-                    <br/>
+                <InputSlider
+                    axis='x'
+                    x={selectedPriceRange[0]} // Set the x value to the starting value
+                    xmin={defaultCategoryMinPrice}
+                    xmax={maxPrice}
+                    xstep={10}
+                    onChange={(position) => setSelectedPriceRange([position.x, selectedPriceRange[1]])}
+                    // Update the selectedPriceRange with the new value of the slider
+                />
+                <br/>
 
 
-                    {/* Display the selected price range */}
-                    <span>{`Price: ${selectedPriceRange[0]} - ${selectedPriceRange[1]}`}</span>
+                {/* Display the selected price range */}
+                <span>{`Price: ${selectedPriceRange[0]} - ${selectedPriceRange[1]}`}</span>
 
-                    {/* Color filter with radio buttons */}
+                {/* Color filter with radio buttons */}
 
-                    <ColorFilter
-                        colors={colorOptions}
-                        selectedColor={selectedColor}
-                        onColorChange={handleColorChange}
-                    />
-                    {/* Reset Filters button */}
-                    <div className="button__wrapper">
+                <ColorFilter
+                    colors={colorOptions}
+                    selectedColor={selectedColor}
+                    onColorChange={handleColorChange}
+                />
+                {/* Reset Filters button */}
+                <div className="button__wrapper">
                     <button className='resetFiltersBtn' onClick={handleResetFilters}>
                         Reset Filters
                     </button>
-                    </div>
-                    {/* Display product counters */}
-                    <div className='products__counters'>
-                        <span>Products in Grid: {productsInGrid}</span>
-                    </div>
-
+                </div>
+                {/* Display product counters */}
+                <div className='products__counters'>
+                    <span>Displayed products:&nbsp;  {productsInGrid}</span>
                 </div>
 
-
-            </aside>
-
-
-            {/* Product grid */}
-            <section className="grid__wrapper">
-                {/* Sorting dropdown component */}
-                <div className='products__sort'>
-                    <SortingDropdown onSortChange={handleSortChange}/>
-                </div>
+            </div>
 
 
-                <div className='products__grid'>
-                    {displayedProducts?.map((product) => (<ProductCard key={product.id} product={product}/>))}
-                </div>
-                {/* "Load More" button */}
-                <div className='products__button'>
-                    {displayedProducts.length < sortedProducts.length && (
-                        <button className='loadMoreBtn' onClick={handleLoadMoreClick}>Load More</button>)}
-                </div>
-            </section>
+        </aside>
 
 
-        </main>);
+        {/* Product grid */}
+        <section className="grid__wrapper">
+            {/* Sorting dropdown component */}
+            <div className='products__sort'>
+                <SortingDropdown onSortChange={handleSortChange}/>
+            </div>
+
+
+            <div className='products__grid'>
+                {displayedProducts?.map((product) => (<ProductCard key={product.id} product={product}/>))}
+            </div>
+            {/* "Load More" button */}
+            <div className='products__button'>
+                {displayedProducts.length < sortedProducts.length && (
+                    <button className='loadMoreBtn' onClick={handleLoadMoreClick}>Load More &nbsp;<FontAwesomeIcon
+                        icon={faArrowDown}/></button>)}
+            </div>
+        </section>
+
+
+    </main>);
 }
 
 export default Products;

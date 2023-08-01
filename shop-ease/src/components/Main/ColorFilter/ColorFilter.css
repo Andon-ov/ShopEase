@@ -1,0 +1,11 @@
+.color__filter {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.color__filter label input[type='radio'] {
+    background-color: var(--mainBlackColor);
+    margin: 0 5px 5px 0;
+
+}

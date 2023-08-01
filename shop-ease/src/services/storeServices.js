@@ -1,22 +1,41 @@
-const url = 'http://localhost:8000/';
+const baseUrl = 'http://localhost:8000';
 
+// Handle errors with the response handler function from Fetch
+const handleResponse = (response) => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok.');
+    }
+    return response.json();
+};
 
 // get all products from server
-
-export const getAll = () => {
-    return fetch(url + '/products/')
-        .then((res) => res.json());
-
+export const getAll = async () => {
+    try {
+        const response = await fetch(`${baseUrl}/products/`);
+        return handleResponse(response);
+    } catch (error) {
+        console.error('Error fetching products:', error);
+        throw error;
+    }
 };
-
 
 // get products details
-export const getOne = (productsId) => {
-    return fetch(`${url}/products/${productsId}/`)
-        .then((res) => res.json());
+export const getOne = async (productId) => {
+    try {
+        const response = await fetch(`${baseUrl}/products/${productId}/`);
+        return handleResponse(response);
+    } catch (error) {
+        console.error('Error fetching product details:', error);
+        throw error;
+    }
 };
 
-export const getAllCategories = () => {
-    return fetch(`${url}/categories/`)
-        .then((res) => res.json());
+export const getAllCategories = async () => {
+    try {
+        const response = await fetch(`${baseUrl}/categories/`);
+        return handleResponse(response);
+    } catch (error) {
+        console.error('Error fetching categories:', error);
+        throw error;
+    }
 };

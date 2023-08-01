@@ -1,18 +1,16 @@
 .header {
     width: 80%;
     margin: auto;
-    background-color: white;
-    transition: top 1s ease-in-out;
+    background-color: var(--mainWhiteColor);
+}
+
+.header.active {
+    height: 100px;
 }
 
 .header .header__logo {
     width: 250px;
     padding: 20px 0;
-}
-
-.header.active {
-    height: 100px;
-
 }
 
 .header.active .header__logo {
@@ -21,11 +19,14 @@
 
 .header__wrapper-sticky {
     position: sticky;
-    top: 0;
+    background-color: var(--mainWhiteColor);
     box-shadow: var(--mainShadow);
     margin-bottom: 40px;
     z-index: 1000;
-    transition: bottom 0.3s ease-in-out;
-
+    top: 0;
+    transition: top 1s ease-in-out;
 }
+
+
+
 
