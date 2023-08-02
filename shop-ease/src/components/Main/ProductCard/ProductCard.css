@@ -1,96 +1,101 @@
 .product__card {
-    max-width: 320px;
-    margin: 10px;
-    display: grid;
-    grid-template-rows: 280px 260px 30px 80px 100px;
-    box-shadow: var(--cardShadow);
-    overflow: hidden;
+  max-width: 410px;
+  display: grid;
+  box-shadow: var(--cardShadow);
+  overflow: hidden;
 }
 
 .product__card .card__image img {
-    padding: 50px;
-    width: 100%;
-    object-fit: cover;
-    object-position: top;
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  object-position: top;
 }
 
-.product__card .card__title h2{
-    padding: 0 30px;
-    font-size: 22px;
-    margin-bottom: 20px;
-
+.product__card .card__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 180px;
+  padding: 20px;
+}
+.product__card .card__heading .card__title {
+  font-size: 22px;
 }
 
-.product__card .card__description {
-    color: var(--textGeryColor);
-    font-size: 14px;
-    padding: 0 20px;
+.product__card .card__heading .card__description {
+  color: var(--textGaryColor);
+  font-size: 14px;
 }
 
-.product__card .card__price {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
+.product__card .card__body {
+  padding-top: 20px;
+  margin: auto;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 150px;
 }
 
-.product__card .card__price .price__original {
-    text-decoration: line-through;
-    margin-right: 10px;
+.product__card .card__body .card__price {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
 
-.product__card .card__price .price__discounted {
-    color: var(--mainRedColor);
+.product__card .card__body .card__price .price__original {
+  text-decoration: line-through;
+  margin-right: 10px;
 }
 
-.product__card .card__ratings {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.product__card .card__body .card__price .price__discounted {
+  color: var(--mainRedColor);
 }
 
-.product__card .card__ratings .ratings {
-    color: var(--mainGoldColor);
-    letter-spacing: 10px;
-    font-size: 34px;
+.product__card .card__body .card__ratings {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.product__card  .card__footer {
-    margin: auto;
+.product__card .card__body .card__ratings .ratings {
+  color: var(--mainGoldColor);
+  letter-spacing: 10px;
+  font-size: 34px;
 }
 
-.product__card .card__footer .product__button {
-    background-color: var(--mainGreenColor);
-    color:var(--mainWhiteColor);
-    border: none;
-    padding: 8px 18px;
-    cursor: pointer;
-    margin-bottom: 16px;
-    border-radius: 4px;
-    box-shadow: var(--buttonShadow);
+.product__card .card__body .product__button {
+  background-color: var(--mainGreenColor);
+  color: var(--mainWhiteColor);
+  border: none;
+  padding: 8px 18px;
+  cursor: pointer;
+  margin-bottom: 32px;
+  border-radius: 4px;
+  box-shadow: var(--buttonShadow);
+  border: 1px solid var(--mainWhiteColor);
 }
 
-.product__card .card__footer .product__button:hover {
-    font-weight: bolder;
-    background-color: var(--mainColor);
-    color: var(--mainBlackColor);
-    border: 1px solid var(--mainBlackColor);
+.product__card .card__body .product__button:hover {
+  font-weight: bolder;
+  background-color: var(--mainColor);
+  color: var(--mainBlackColor);
+  border: 1px solid var(--mainBlackColor);
 }
 
-
-.product__card .card__footer .custom__alert {
-    position: fixed;
-    top: 5.8%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--mainGreenColor);
-    color: var(--mainWhiteColor);
-    padding: 10px 20px;
-    border-radius: 4px;
-    box-shadow: var(--buttonShadow);
-    z-index: 9999;
+.product__card .card__body .custom__alert {
+  position: fixed;
+  top: 14%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: var(--mainGreenColor);
+  color: var(--mainWhiteColor);
+  padding: 10px 20px;
+  box-shadow: var(--buttonShadow);
+  z-index: 9999;
 }
-
-

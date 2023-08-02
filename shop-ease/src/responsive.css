@@ -1,0 +1,27 @@
+/* Mobile styles */
+@media (max-width: 767px) {
+  #root {
+    background-color: red;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .products section.grid__wrapper div.products__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small desktop styles */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .products section.grid__wrapper div.products__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium desktop styles */
+@media (min-width: 1280px) and (max-width: 1919px) {
+}
+/* Large desktop styles  */
+@media (min-width: 1920px) {
+}

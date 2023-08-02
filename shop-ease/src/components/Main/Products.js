@@ -1,11 +1,11 @@
 // Built-in modules or libraries
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Third-party libraries
 import InputSlider from 'react-input-slider';
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowDown} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 // Local components and modules
 import ColorFilter from './ColorFilter/ColorFilter';
@@ -16,7 +16,7 @@ import * as storeServices from '../../services/storeServices';
 // Stylesheets (if applicable)
 import './Products.css';
 
-function Products({selectedCategory}) {
+function Products({ selectedCategory }) {
 
     // State to store the products fetched from the API
     const [products, setProducts] = useState([]);
@@ -215,16 +215,16 @@ function Products({selectedCategory}) {
     };
 
 
-// Function to handle sorting option change
+    // Function to handle sorting option change
     const handleSortChange = (option) => {
         setSortingOption(option);
     };
 
-// Apply sorting to the filtered products
+    // Apply sorting to the filtered products
     const sortedProducts = sortProducts(filteredProducts, sortingOption);
 
 
-// Displayed products to show in the grid, based on loadCount
+    // Displayed products to show in the grid, based on loadCount
     const displayedProducts = sortedProducts.slice(0, loadCount);
 
 
@@ -235,77 +235,78 @@ function Products({selectedCategory}) {
     }, [displayedProducts, sortedProducts]);
 
 
-    return (<main className='products'>
+    return (
+        <main className='products'>
 
-        {/*Filters*/}
-        <aside className="filters">
+            {/*Filters*/}
+            <aside className="filters">
 
-            <div className='filters__sticky'>
-                <h1>Filters</h1>
+                <div className='filters__sticky'>
+                    <h1>Filters</h1>
 
-                {/* Price filter with react-input-slider */}
-                <h3>Price Range:</h3>
+                    {/* Price filter with react-input-slider */}
+                    <h3>Price Range:</h3>
 
-                <InputSlider
-                    axis='x'
-                    x={selectedPriceRange[0]} // Set the x value to the starting value
-                    xmin={defaultCategoryMinPrice}
-                    xmax={maxPrice}
-                    xstep={10}
-                    onChange={(position) => setSelectedPriceRange([position.x, selectedPriceRange[1]])}
+                    <InputSlider
+                        axis='x'
+                        x={selectedPriceRange[0]} // Set the x value to the starting value
+                        xmin={defaultCategoryMinPrice}
+                        xmax={maxPrice}
+                        xstep={10}
+                        onChange={(position) => setSelectedPriceRange([position.x, selectedPriceRange[1]])}
                     // Update the selectedPriceRange with the new value of the slider
-                />
-                <br/>
+                    />
+                    <br />
 
 
-                {/* Display the selected price range */}
-                <span>{`Price: ${selectedPriceRange[0]} - ${selectedPriceRange[1]}`}</span>
+                    {/* Display the selected price range */}
+                    <span>{`Price: ${selectedPriceRange[0]} - ${selectedPriceRange[1]}`}</span>
 
-                {/* Color filter with radio buttons */}
+                    {/* Color filter with radio buttons */}
 
-                <ColorFilter
-                    colors={colorOptions}
-                    selectedColor={selectedColor}
-                    onColorChange={handleColorChange}
-                />
-                {/* Reset Filters button */}
-                <div className="button__wrapper">
-                    <button className='resetFiltersBtn' onClick={handleResetFilters}>
-                        Reset Filters
-                    </button>
+                    <ColorFilter
+                        colors={colorOptions}
+                        selectedColor={selectedColor}
+                        onColorChange={handleColorChange}
+                    />
+                    {/* Reset Filters button */}
+                    <div className="button__wrapper">
+                        <button className='resetFiltersBtn' onClick={handleResetFilters}>
+                            Reset Filters
+                        </button>
+                    </div>
+                    {/* Display product counters */}
+                    <div className='products__counters'>
+                        <span>Displayed products:&nbsp;  {productsInGrid}</span>
+                    </div>
+
                 </div>
-                {/* Display product counters */}
-                <div className='products__counters'>
-                    <span>Displayed products:&nbsp;  {productsInGrid}</span>
+
+
+            </aside>
+
+
+            {/* Product grid */}
+            <section className="grid__wrapper">
+                {/* Sorting dropdown component */}
+                <div className='products__sort'>
+                    <SortingDropdown onSortChange={handleSortChange} />
                 </div>
 
-            </div>
+
+                <div className='products__grid'>
+                    {displayedProducts?.map((product) => (<ProductCard key={product.id} product={product} />))}
+                </div>
+                {/* "Load More" button */}
+                <div className='products__button'>
+                    {displayedProducts.length < sortedProducts.length && (
+                        <button className='loadMoreBtn' onClick={handleLoadMoreClick}>Load More &nbsp;<FontAwesomeIcon
+                            icon={faArrowDown} /></button>)}
+                </div>
+            </section>
 
 
-        </aside>
-
-
-        {/* Product grid */}
-        <section className="grid__wrapper">
-            {/* Sorting dropdown component */}
-            <div className='products__sort'>
-                <SortingDropdown onSortChange={handleSortChange}/>
-            </div>
-
-
-            <div className='products__grid'>
-                {displayedProducts?.map((product) => (<ProductCard key={product.id} product={product}/>))}
-            </div>
-            {/* "Load More" button */}
-            <div className='products__button'>
-                {displayedProducts.length < sortedProducts.length && (
-                    <button className='loadMoreBtn' onClick={handleLoadMoreClick}>Load More &nbsp;<FontAwesomeIcon
-                        icon={faArrowDown}/></button>)}
-            </div>
-        </section>
-
-
-    </main>);
+        </main>);
 }
 
 export default Products;

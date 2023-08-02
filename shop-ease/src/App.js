@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './joshwcomeau.css';
 import './App.css';
+import './responsive.css'
 
 import Header from './components/Header/Header';
 import Products from './components/Main/Products';
@@ -37,19 +38,20 @@ function App() {
     return (
         <Router>
             <div className='header__wrapper-sticky'>
-                <Header/>
-                <Nav onCategoryClick={handleCategoryClick} selectedCategory={selectedCategory}/>
+                <Header />
+                <Nav onCategoryClick={handleCategoryClick} selectedCategory={selectedCategory} />
+
             </div>
-            <CategoryHeader category={selectedCategory}/>
+                <CategoryHeader category={selectedCategory} />
             <div className='product__wrapper'>
                 <Routes>
-                    <Route path={leatherBagsPath} element={<Products selectedCategory={selectedCategory}/>}/>
-                    <Route path={beltsPath} element={<Products selectedCategory={selectedCategory}/>}/>
-                    <Route path={walletsPath} element={<Products selectedCategory={selectedCategory}/>}/>
-                    <Route path={leatherProductsPath} element={<Products selectedCategory={selectedCategory}/>}/>
+                    <Route path={leatherBagsPath} element={<Products selectedCategory={selectedCategory} />} />
+                    <Route path={beltsPath} element={<Products selectedCategory={selectedCategory} />} />
+                    <Route path={walletsPath} element={<Products selectedCategory={selectedCategory} />} />
+                    <Route path={leatherProductsPath} element={<Products selectedCategory={selectedCategory} />} />
                 </Routes>
             </div>
-            <Footer/>
+            <Footer />
         </Router>
     );
 }

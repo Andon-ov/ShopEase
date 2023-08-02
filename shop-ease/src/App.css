@@ -1,34 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@100;300;400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@100;300;400;700;900&display=swap");
 
 :root {
-    --mainColor: #faebd7;
-    --mainWhiteColor: rgb(255, 255, 255);
-    --mainBlackColor: rgb(0, 0, 0);
-    --mainGreyColor: #f4f4f4;
-    --mainRedColor: red;
-    --mainGoldColor: gold;
-    --mainGreenColor: #4caf50;
+  --mainColor: #faebd7;
+  --mainWhiteColor: rgb(255, 255, 255);
+  --mainBlackColor: rgb(0, 0, 0);
+  --mainGreyColor: #f4f4f4;
+  --mainRedColor: red;
+  --mainGoldColor: gold;
+  --mainGreenColor: #4caf50;
 
-    --mainShadow: 0 10px 20px 0 rgba(109, 109, 109, 0.45);
-    /*--cardShadow: 2px 0px 30px -8px rgba(0, 0, 0, 0.45);*/
+  --mainShadow: 0 10px 20px 0 rgba(109, 109, 109, 0.45);
+  /*--cardShadow: 2px 0px 30px -8px rgba(0, 0, 0, 0.45);*/
 
-    --cardShadow:  0px 4px 8px rgba(0, 0, 0, 0.1) ;
-    --buttonShadow:  0px 4px 6px rgba(0, 0, 0, 0.1) ;
+  --cardShadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  --buttonShadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 
-    --textGeryColor:rgb(128,128,128);
+  --textGaryColor: rgb(128, 128, 128);
 }
 
 h2 {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-    font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .product__wrapper {
-    width: 80%;
-    display: flex;
-    margin: auto;
-    margin-bottom: 40px;
+  width: 90%;
+  display: flex;
+  margin: auto;
+  margin-bottom: 40px;
+  border: 1px solid black;
+  max-width: 1920px;
 }
