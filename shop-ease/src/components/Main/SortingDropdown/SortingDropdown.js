@@ -10,7 +10,7 @@ const SortingDropdown = ({onSortChange}) => {
     return (
         <div className='sorting__by'>
             <label htmlFor="sorting" className="sorting__label">
-                SORT BY:
+                SORT:
             </label>
             <select id="sorting" className="sorting__select" onChange={handleSortChange}>
                 <option value="name-asc">Name (A-Z)</option>

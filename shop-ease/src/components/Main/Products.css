@@ -1,97 +1,205 @@
+/*.products {*/
+/*  display: flex;*/
+/*  margin-bottom: 30px;*/
+/*}*/
+
+/*.filters__wrapper.hidden ,*/
+/*.products__counters--mobile,*/
+/*.filters__menu,*/
+/*.filters__menu-close{*/
+/*  display: none;*/
+/*}*/
+
+
+/*.products .filters .filters__sticky .filters_head .resetFiltersBtn {*/
+/*  all: unset;*/
+/*  color: var(--mainBlackColor);*/
+/*  cursor: pointer;*/
+
+/*}*/
+
+/*.products .filters {*/
+/*  position: relative;*/
+/*  width: 400px;*/
+/*  padding: 30px;*/
+/*}*/
+
+/*.products .filters .filters__sticky {*/
+/*  width: 287px;*/
+/*  position: sticky;*/
+/*  top: 180px;*/
+/*  border-radius: 15px;*/
+/*  padding: 0 30px;*/
+/*}*/
+
+/*.products .filters .filters__sticky h1 {*/
+/*  text-align: center;*/
+/*  padding: 30px;*/
+/*}*/
+
+/*.products .filters .filters__sticky div.css-3g5hux-Slider {*/
+/*  background: var(--mainColor);*/
+/*}*/
+/*.products .filters .filters__sticky .button__wrapper {*/
+/*  width: 100%;*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+
+/*}*/
+
+/*.products .filters .filters__sticky .filters_head{*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: space-between;*/
+/*}*/
+
+/*.products .filters .filters__sticky .filters_head .resetFiltersBtn:hover {*/
+/*  color: blue;*/
+/*}*/
+
+/*.products .filters .filters__sticky .products__counters {*/
+/*  font-size: 12px;*/
+/*}*/
+
+/*.products .grid__wrapper .products__sort {*/
+/*  display: flex;*/
+/*  justify-content: flex-end;*/
+/*  margin-bottom: 20px;*/
+/*}*/
+
+/*.products .grid__wrapper .products__grid {*/
+/*  display: grid;*/
+/*  grid-gap: 10px;*/
+/*  grid-template-columns: repeat(3, 1fr);*/
+/*  margin-bottom: 30px;*/
+/*}*/
+
+/*.products .grid__wrapper .products__button {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*}*/
+
+/*.products .grid__wrapper .products__button .loadMoreBtn {*/
+/*  border: 1px solid var(--mainColor);*/
+/*  padding: 10px 20px;*/
+/*  cursor: pointer;*/
+/*  background-color: var(--mainColor);*/
+/*  color: var(--mainBlackColor);*/
+/*  transition: 0.3s;*/
+/*  box-shadow: var(--buttonShadow);*/
+/*}*/
+
+/*.products .grid__wrapper .products__button .loadMoreBtn:hover {*/
+/*  font-weight: bolder;*/
+/*  background-color: var(--mainBlackColor);*/
+/*  color: var(--mainColor);*/
+/*  border: 1px solid var(--mainColor);*/
+/*}*/
+
+
+/* General layout for the products section */
 .products {
-    display: flex;
-    margin-bottom: 30px;
+  display: flex;
+  margin-bottom: 30px;
 }
 
+/* Hide certain elements initially */
+main.products section.grid__wrapper button#filters__toggle,
+.filters__wrapper.hidden,
+.products__counters--mobile,
+.filters__menu,
+.filters__menu-close {
+  display: none;
+}
+button#filters__toggle{
+  all: unset;
+  border: unset;
+  border-bottom: 1px solid black;
+  padding: 0 30px;
+  font-size: 14px;
+}
+
+/* Styling for the reset filters button */
+.products .filters .filters__sticky .filters_head .resetFiltersBtn {
+  all: unset;
+  color: var(--mainBlackColor);
+  cursor: pointer;
+}
+
+/* Styling for the filters section */
 .products .filters {
-    position: relative;
-    width: 400px;
-    padding: 30px;
+  position: relative;
+  width: 400px;
+  padding: 30px;
 }
 
+/* Styling for the sticky filters section */
 .products .filters .filters__sticky {
-    width: 287px;
-    position: sticky;
-    top: 180px;
-    border-radius: 15px;
-    padding: 0 30px;
+  width: 287px;
+  position: sticky;
+  top: 180px;
+  border-radius: 15px;
+  padding: 0 30px;
 }
 
-.products .filters .filters__sticky h1 {
-    text-align: center;
-    padding: 30px;
+/* Styling for the filters section heading */
+.products .filters .filters__sticky .filters_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-
-.products .filters .filters__sticky div.css-3g5hux-Slider {
-    background: var(--mainColor);
+/* Hover effect for the reset filters button */
+.products .filters .filters__sticky .filters_head .resetFiltersBtn:hover {
+  color: blue;
 }
 
-.products .filters .filters__sticky .button__wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.products .filters .filters__sticky .button__wrapper .resetFiltersBtn {
-    margin: 20px 0;
-    border: 1px solid var(--mainColor);
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: var(--mainColor);
-    color: var(--mainBlackColor);
-    transition: 0.3s;
-    box-shadow: var(--buttonShadow);
-}
-
-.products .filters .filters__sticky .button__wrapper .resetFiltersBtn:hover {
-    font-weight: bolder;
-    background-color: var(--mainBlackColor);
-    color: var(--mainColor);
-    border: 1px solid var(--mainColor);
-}
-
-
+/* Styling for the products counters */
 .products .filters .filters__sticky .products__counters {
-    text-align: center;
-    font-style: italic;
+  font-size: 12px;
 }
 
+/* Styling for the sorting dropdown */
 .products .grid__wrapper .products__sort {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
 }
 
+/* Styling for the products grid */
 .products .grid__wrapper .products__grid {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 30px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 30px;
 }
 
+/* Styling for the "Load More" button */
 .products .grid__wrapper .products__button {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-.products .grid__wrapper .products__button .loadMoreBtn {
-    border: 1px solid var(--mainColor);
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: var(--mainColor);
-    color: var(--mainBlackColor);
-    transition: 0.3s;
-    box-shadow: var(--buttonShadow);
-}
-
+/* Styling for the "Load More" button on hover */
 .products .grid__wrapper .products__button .loadMoreBtn:hover {
-    font-weight: bolder;
-    background-color: var(--mainBlackColor);
-    color: var(--mainColor);
-    border: 1px solid var(--mainColor);
+  font-weight: bolder;
+  background-color: var(--mainBlackColor);
+  color: var(--mainColor);
+  border: 1px solid var(--mainColor);
 }
 
+/* Transition for smooth hover effect on buttons */
+.products .grid__wrapper .products__button .loadMoreBtn {
+  border: 1px solid var(--mainColor);
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: var(--mainColor);
+  color: var(--mainBlackColor);
+  transition: background-color 0.3s, color 0.3s, border 0.3s, font-weight 0.3s;
+  box-shadow: var(--buttonShadow);
+}
 
-
-
+/* Transition for smooth reveal of filters section */
+.filters__wrapper {
+  transition: transform 0.3s ease-in-out;
+}

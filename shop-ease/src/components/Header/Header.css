@@ -1,11 +1,14 @@
 .header {
-    width: 80%;
+    width: 90%;
     margin: auto;
     background-color: var(--mainWhiteColor);
+    max-width: 1920px;
+
 }
 
 .header.active {
-    height: 100px;
+    height: 80px;
+
 }
 
 .header .header__logo {
@@ -14,7 +17,10 @@
 }
 
 .header.active .header__logo {
-    width: 180px;
+    width: 120px;
+    /*display: none;*/
+
+
 }
 
 .header__wrapper-sticky {
@@ -26,7 +32,5 @@
     top: 0;
     transition: top 1s ease-in-out;
 }
-
-
 
 

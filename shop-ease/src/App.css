@@ -31,6 +31,5 @@ body {
   display: flex;
   margin: auto;
   margin-bottom: 40px;
-  border: 1px solid black;
   max-width: 1920px;
 }

@@ -1,11 +1,13 @@
 // Built-in modules or libraries
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 
 // Third-party libraries
 import InputSlider from 'react-input-slider';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faArrowDown} from '@fortawesome/free-solid-svg-icons';
+import {faBars} from '@fortawesome/free-solid-svg-icons';
+import {faXmark} from '@fortawesome/free-solid-svg-icons';
 
 // Local components and modules
 import ColorFilter from './ColorFilter/ColorFilter';
@@ -16,7 +18,7 @@ import * as storeServices from '../../services/storeServices';
 // Stylesheets (if applicable)
 import './Products.css';
 
-function Products({ selectedCategory }) {
+function Products({selectedCategory}) {
 
     // State to store the products fetched from the API
     const [products, setProducts] = useState([]);
@@ -45,6 +47,47 @@ function Products({ selectedCategory }) {
 
     // Default category to be shown when no category is selected
     const defaultCategory = 'LEATHER BAGS';
+
+
+    // Set filters visible and invisible
+    const [filtersVisible, setFiltersVisible] = useState(true);
+    const handleFilterToggle = () => {
+        setFiltersVisible(!filtersVisible);
+    };
+
+    // State to track whether to activate the event handler
+    const [isResponsive, setIsResponsive] = useState(window.innerWidth <= 767);
+
+    // Event handler function
+    const handleResize = () => {
+        setIsResponsive(window.innerWidth <= 767);
+    };
+
+    // Attach the event listener on component mount
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
+        // Remove the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    // Use the isResponsive state to conditionally apply logic
+    useEffect(() => {
+        if (isResponsive) {
+            // Code to execute when in responsive mode
+            setFiltersVisible(false)
+            // You can activate the event handler or perform any other actions here
+        } else {
+            // Code to execute when not in responsive mode
+            setFiltersVisible(true)
+
+            // You can deactivate the event handler or perform other actions here
+        }
+    }, [isResponsive], setFiltersVisible);
+
+    //  Set filters visible and invisible ----------------------------------------
 
     // Load more start here -----------------------------------------------------------------------------------------
 
@@ -239,47 +282,72 @@ function Products({ selectedCategory }) {
         <main className='products'>
 
             {/*Filters*/}
-            <aside className="filters">
+            <aside className='filters'>
 
                 <div className='filters__sticky'>
-                    <h1>Filters</h1>
 
-                    {/* Price filter with react-input-slider */}
-                    <h3>Price Range:</h3>
+                    {/*<div className="filters__menu">*/}
+                    {/*    <button id="filters__toggle" onClick={handleFilterToggle}>*/}
+                    {/*        filters*/}
+                    {/*        /!*<FontAwesomeIcon icon={faBars}/>*!/*/}
+                    {/*    </button>*/}
+                    {/*</div>*/}
 
-                    <InputSlider
-                        axis='x'
-                        x={selectedPriceRange[0]} // Set the x value to the starting value
-                        xmin={defaultCategoryMinPrice}
-                        xmax={maxPrice}
-                        xstep={10}
-                        onChange={(position) => setSelectedPriceRange([position.x, selectedPriceRange[1]])}
-                    // Update the selectedPriceRange with the new value of the slider
-                    />
-                    <br />
-
-
-                    {/* Display the selected price range */}
-                    <span>{`Price: ${selectedPriceRange[0]} - ${selectedPriceRange[1]}`}</span>
-
-                    {/* Color filter with radio buttons */}
-
-                    <ColorFilter
-                        colors={colorOptions}
-                        selectedColor={selectedColor}
-                        onColorChange={handleColorChange}
-                    />
-                    {/* Reset Filters button */}
-                    <div className="button__wrapper">
-                        <button className='resetFiltersBtn' onClick={handleResetFilters}>
-                            Reset Filters
-                        </button>
-                    </div>
                     {/* Display product counters */}
                     <div className='products__counters'>
-                        <span>Displayed products:&nbsp;  {productsInGrid}</span>
+                        <span>{productsInGrid}&nbsp;Products  </span>
                     </div>
 
+                    <div className={`filters__wrapper ${filtersVisible ? '' : 'hidden'}`}>
+                        <div className="filters__menu-close">
+                            <button id="filters__toggle-close" onClick={handleFilterToggle}>
+                                <FontAwesomeIcon icon={faXmark}/>
+                            </button>
+                        </div>
+                        <div className="filters_head">
+                            <h3>FILTER</h3>
+                            <button className='resetFiltersBtn' onClick={handleResetFilters}>
+                                Reset x
+                            </button>
+                        </div>
+
+                        {/* Price filter with react-input-slider */}
+                        <h3>Price Range:</h3>
+
+                        <InputSlider
+                            axis='x'
+                            x={selectedPriceRange[0]} // Set the x value to the starting value
+                            xmin={defaultCategoryMinPrice}
+                            xmax={maxPrice}
+                            xstep={10}
+                            onChange={(position) => setSelectedPriceRange([position.x, selectedPriceRange[1]])}
+                            // Update the selectedPriceRange with the new value of the slider
+                        />
+                        <br/>
+
+
+                        {/* Display the selected price range */}
+                        <span>{`Price: ${selectedPriceRange[0]} - ${selectedPriceRange[1]}`}</span>
+
+                        {/* Color filter with radio buttons */}
+
+                        <ColorFilter
+                            colors={colorOptions}
+                            selectedColor={selectedColor}
+                            onColorChange={handleColorChange}
+                        />
+                        {/* Reset Filters button */}
+                        <div className="button__wrapper">
+
+                            <button className='close__button' onClick={handleFilterToggle}>
+                                <div className='products__counters--mobile'>
+                                    <span>Show results&nbsp;  {productsInGrid}</span>
+                                </div>
+                            </button>
+                        </div>
+
+
+                    </div>
                 </div>
 
 
@@ -288,20 +356,27 @@ function Products({ selectedCategory }) {
 
             {/* Product grid */}
             <section className="grid__wrapper">
+
                 {/* Sorting dropdown component */}
                 <div className='products__sort'>
-                    <SortingDropdown onSortChange={handleSortChange} />
+                    <button id="filters__toggle" onClick={handleFilterToggle}>
+                       Filters&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+
+                        {/*<FontAwesomeIcon icon={faBars}/>*/}
+                    </button>
+                    <SortingDropdown onSortChange={handleSortChange}/>
+
                 </div>
 
 
                 <div className='products__grid'>
-                    {displayedProducts?.map((product) => (<ProductCard key={product.id} product={product} />))}
+                    {displayedProducts?.map((product) => (<ProductCard key={product.id} product={product}/>))}
                 </div>
                 {/* "Load More" button */}
                 <div className='products__button'>
                     {displayedProducts.length < sortedProducts.length && (
                         <button className='loadMoreBtn' onClick={handleLoadMoreClick}>Load More &nbsp;<FontAwesomeIcon
-                            icon={faArrowDown} /></button>)}
+                            icon={faArrowDown}/>
+                        </button>)}
                 </div>
             </section>
 
