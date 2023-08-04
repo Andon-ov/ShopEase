@@ -1,5 +1,7 @@
+// Import the CSS file for styling
 import './Footer.css';
 
+// Array containing social media links
 const socialMediaLinks = [
     {
         name: 'Facebook',

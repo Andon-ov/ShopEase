@@ -1,28 +1,28 @@
+/* Styles for the header section */
 .header {
     width: 90%;
     margin: auto;
     background-color: var(--mainWhiteColor);
     max-width: 1920px;
-
 }
 
+/* Styles for the active header */
 .header.active {
     height: 80px;
-
 }
 
+/* Styles for the logo within the header */
 .header .header__logo {
     width: 250px;
     padding: 20px 0;
 }
 
+/* Styles for the logo within the active header */
 .header.active .header__logo {
     width: 120px;
-    /*display: none;*/
-
-
 }
 
+/* Styles for the sticky header wrapper */
 .header__wrapper-sticky {
     position: sticky;
     background-color: var(--mainWhiteColor);
@@ -32,5 +32,4 @@
     top: 0;
     transition: top 1s ease-in-out;
 }
-
 

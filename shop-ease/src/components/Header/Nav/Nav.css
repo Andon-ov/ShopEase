@@ -1,3 +1,4 @@
+/* Styles for the navigation section */
 .nav .nav__ul {
     display: flex;
     flex-direction: row;
@@ -6,10 +7,12 @@
     background-color: var(--mainBlackColor);
 }
 
+/* Styles for each navigation list item */
 .nav .nav__ul .nav__li {
-    background-color:var(--mainBlackColor);
+    background-color: var(--mainBlackColor);
 }
 
+/* Styles for navigation links within list items */
 .nav .nav__ul .nav__li .nav__link {
     padding: 10px 20px;
     font-weight: 400;
@@ -20,11 +23,13 @@
     cursor: pointer;
 }
 
+/* Styles for navigation links on hover */
 .nav .nav__ul .nav__li .nav__link:hover {
-    background-color:var(--mainColor);
-    color:var(--mainBlackColor);
+    background-color: var(--mainColor);
+    color: var(--mainBlackColor);
 }
 
+/* Styles for active navigation link */
 .nav .nav__ul .nav__li .nav__link.active {
     background-color: var(--mainColor);
     color: var(--mainBlackColor);

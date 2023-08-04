@@ -4,8 +4,8 @@ import React, {useEffect, useState} from 'react';
 // Third-party libraries
 import InputSlider from 'react-input-slider';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faBars, faXmark,faPlus } from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faArrowDown, faXmark} from '@fortawesome/free-solid-svg-icons';
 
 // Local components and modules
 import ColorFilter from './ColorFilter/ColorFilter';
@@ -29,7 +29,7 @@ function Products({selectedCategory}) {
         storeServices.getAll()
             .then((products) => {
 
-                // I did mapping on the categories because I created the app this way and then I changed the base
+                // I did mapping on the categories because I created the app this way, and then I changed the base
                 const categoryMapping = {
                     1: 'LEATHER BAGS', 2: 'BELTS', 3: 'WALLETS', 4: 'LEATHER PRODUCTS',
                 };
@@ -47,7 +47,8 @@ function Products({selectedCategory}) {
     const defaultCategory = 'LEATHER BAGS';
 
 
-    // Set filters visible and invisible
+
+    // Set filters visible and invisible start here -----------------------------------------------------------------
     const [filtersVisible, setFiltersVisible] = useState(true);
     const handleFilterToggle = () => {
         setFiltersVisible(!filtersVisible);
@@ -85,7 +86,9 @@ function Products({selectedCategory}) {
         }
     }, [isResponsive], setFiltersVisible);
 
-    //  Set filters visible and invisible ----------------------------------------
+    // Set filters visible and invisible end here  ----------------------------------------------------------------
+
+
 
     // Load more start here -----------------------------------------------------------------------------------------
 
@@ -107,6 +110,7 @@ function Products({selectedCategory}) {
     }, [selectedCategory]);
 
     // Load more end here -------------------------------------------------------------------------------------------
+
 
 
     // filters start here! -------------------------------------------------------------------------------------------
@@ -150,7 +154,7 @@ function Products({selectedCategory}) {
         return isCategoryMatch && isColorMatch && isPriceMatch;
     });
 
-    // wen change category reset the filter
+    // When change category reset the filter
     useEffect(() => {
         setSelectedColor('');
         setSelectedPriceRange([defaultCategoryMinPrice, defaultCategoryMaxPrice]);
@@ -164,8 +168,7 @@ function Products({selectedCategory}) {
 
     // Create a function to find all unique colors to filter:
     const getUniqueColors = () => {
-        const uniqueColors = [...new Set(filteredProducts.map((product) => product.product_color))];
-        return uniqueColors;
+         return [...new Set(filteredProducts.map((product) => product.product_color))]
     };
 
     // Get the list of unique colors for the selected category
@@ -194,22 +197,16 @@ function Products({selectedCategory}) {
         .filter((price) => !isNaN(price) && price !== null);
 
     // Calculate minimum and maximum price
-    const minPrice = Math.min(...validPrices);
     const maxPrice = Math.max(...validPrices);
 
     // Set bounds for the slider
-    const sliderMin = isNaN(minPrice) ? minPrice : defaultCategoryMinPrice;
     const sliderMax = isNaN(maxPrice) ? maxPrice : defaultCategoryMaxPrice;
-
-
-    // console.log(` function minPrice ${minPrice} maxPrice ${maxPrice}`)
-    // sortedProducts.forEach(x => console.log(`Products in this category discounted_price ${x.discounted_price} price${x.price}`))
-
 
     // Filters end here! -------------------------------------------------------------------------------------------
 
 
-    // Sorting end here! -------------------------------------------------------------------------------------------
+
+    // Sorting start here! -------------------------------------------------------------------------------------------
     // State to store the currently selected sorting option
     const [sortingOption, setSortingOption] = useState('name-asc');
 
@@ -284,21 +281,15 @@ function Products({selectedCategory}) {
 
                 <div className='filters__sticky'>
 
-                    {/*<div className="filters__menu">*/}
-                    {/*    <button id="filters__toggle" onClick={handleFilterToggle}>*/}
-                    {/*        filters*/}
-                    {/*        /!*<FontAwesomeIcon icon={faBars}/>*!/*/}
-                    {/*    </button>*/}
-                    {/*</div>*/}
-
-
 
                     <div className={`filters__wrapper ${filtersVisible ? '' : 'hidden'}`}>
+
                         <div className="filters__menu-close">
                             <button id="filters__toggle-close" onClick={handleFilterToggle}>
                                 <FontAwesomeIcon icon={faXmark}/>
                             </button>
                         </div>
+
                         <div className="filters_head">
                             <h3>FILTER</h3>
                             <button className='resetFiltersBtn' onClick={handleResetFilters}>
@@ -331,26 +322,27 @@ function Products({selectedCategory}) {
                             selectedColor={selectedColor}
                             onColorChange={handleColorChange}
                         />
+
                         {/* Reset Filters button */}
                         <div className="button__wrapper">
 
                             <button className='close__button' onClick={handleFilterToggle}>
                                 <div className='products__counters--mobile'>
-                                    <span>Show results&nbsp;:  {productsInGrid}</span>
+                                    <span>Show results&nbsp;: {productsInGrid}</span>
                                 </div>
                             </button>
                         </div>
 
                         {/* Display product counters */}
                         <div className='products__counters'>
-                            <span>Show results&nbsp;:  {productsInGrid}</span>
+                            <span>Show results&nbsp;: {productsInGrid}</span>
                         </div>
+
                     </div>
+
                 </div>
 
-
             </aside>
-
 
             {/* Product grid */}
             <section className="grid__wrapper">
@@ -358,17 +350,15 @@ function Products({selectedCategory}) {
                 {/* Sorting dropdown component */}
                 <div className='products__sort'>
                     <button id="filters__toggle" onClick={handleFilterToggle}>
-                       Filters
-                        {/*<FontAwesomeIcon icon={faBars}/>*/}
+                        Filters
                     </button>
                     <SortingDropdown onSortChange={handleSortChange}/>
-
                 </div>
-
 
                 <div className='products__grid'>
                     {displayedProducts?.map((product) => (<ProductCard key={product.id} product={product}/>))}
                 </div>
+
                 {/* "Load More" button */}
                 <div className='products__button'>
                     {displayedProducts.length < sortedProducts.length && (
@@ -376,6 +366,7 @@ function Products({selectedCategory}) {
                             icon={faArrowDown}/>
                         </button>)}
                 </div>
+
             </section>
 
 

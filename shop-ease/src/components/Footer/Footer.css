@@ -1,36 +1,38 @@
+/* Styles for the footer section */
 .footer {
     background-color: var(--mainGreyColor);
 }
 
+/* Styles for the wrapper element inside the footer */
 .footer .footer__wrapper {
     width: 90%;
     margin: auto;
     max-width: 1920px;
 }
 
-
+/* Styles for the content within the footer */
 .footer .footer__wrapper .footer__content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     margin-bottom: 30px;
     padding-top: 30px;
-
 }
 
+/* Styles for headings within the footer content */
 .footer .footer__wrapper .footer__content h4 {
     font-size: 18px;
     margin-bottom: 10px;
 }
 
-
+/* Styles for contact information within the footer */
 .footer .footer__wrapper .footer__content .contact__info p {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-
+/* Styles for lists within the footer content */
 .footer .footer__wrapper .footer__content .social__links ul,
 .footer .footer__wrapper .footer__content .footer__nav ul {
     list-style: none;
@@ -38,11 +40,13 @@
     padding: 0;
 }
 
+/* Styles for list items within the footer content */
 .footer .footer__wrapper .footer__content .social__links ul li,
 .footer .footer__wrapper .footer__content .footer__nav ul li {
     margin-bottom: 5px;
 }
 
+/* Styles for links within the footer content */
 .footer .footer__wrapper .footer__content .social__links a,
 .footer .footer__wrapper .footer__content .footer__nav a {
     color: var(--mainBlackColor);
@@ -50,13 +54,14 @@
     padding: 5px 10px;
 }
 
+/* Styles for link hover states within the footer content */
 .footer .footer__wrapper .footer__content .social__links a:hover,
 .footer .footer__wrapper .footer__content .footer__nav a:hover {
     color: var(--mainColor);
     background-color: var(--mainBlackColor);
 }
 
-
+/* Styles for the bottom section of the footer */
 .footer .footer__bottom {
     font-size: 14px;
     color: var(--mainWhiteColor);

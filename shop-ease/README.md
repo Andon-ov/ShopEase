@@ -1,4 +1,29 @@
-# Getting Started with Create React App
+# Running the Project
+
+To get the project up and running, follow these steps:
+
+1. Install the required dependencies by running the following command:
+
+    ```shell
+    npm install
+    ```
+
+2. Update the dependencies to their latest versions, if there are any updates available:
+
+    ```shell
+    npm update
+    ```
+
+3. Start the project:
+
+    ```shell
+    npm start
+    ```
+
+Follow these steps to successfully launch the project.
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

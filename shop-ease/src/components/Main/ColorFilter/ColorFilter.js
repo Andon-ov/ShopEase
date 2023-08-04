@@ -1,10 +1,16 @@
-import './ColorFilter.css'
-import React from 'react';
+// Import CSS styles for the component
+import './ColorFilter.css';
 
-function ColorFilter({colors, selectedColor, onColorChange}) {
-    return (<div className='color__filter'>
+// ColorFilter component
+function ColorFilter({ colors, selectedColor, onColorChange }) {
+    return (
+        <div className='color__filter'>
+            {/* Heading for color filter */}
             <h3>Color:</h3>
-            {colors.map((color) => (<label className="color__label" key={color} htmlFor={`color__${color}`}>
+            {/* Map through colors and create radio inputs */}
+            {colors.map((color) => (
+                <label className="color__label" key={color} htmlFor={`color__${color}`}>
+                    {/* Radio input for color selection */}
                     <input
                         className="color__input"
                         type='radio'
@@ -15,9 +21,12 @@ function ColorFilter({colors, selectedColor, onColorChange}) {
                         onChange={() => onColorChange(color)}
                         aria-label={`Select ${color} color`}
                     />
+                    {/* Display color name */}
                     {color}
-                </label>))}
-        </div>);
+                </label>
+            ))}
+        </div>
+    );
 }
 
 export default ColorFilter;

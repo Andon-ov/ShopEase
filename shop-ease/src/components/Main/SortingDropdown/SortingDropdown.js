@@ -1,17 +1,23 @@
+// Import necessary dependencies from React
 import React from 'react';
 
+// Import CSS styles for the component
 import './SortingDropdown.css';
 
-const SortingDropdown = ({onSortChange}) => {
+// SortingDropdown component
+const SortingDropdown = ({ onSortChange }) => {
+    // Function to handle sorting change
     const handleSortChange = (event) => {
         onSortChange(event.target.value);
     };
 
     return (
         <div className='sorting__by'>
+            {/* Label for the sorting dropdown */}
             <label htmlFor="sorting" className="sorting__label">
                 SORT:
             </label>
+            {/* Select element for sorting options */}
             <select id="sorting" className="sorting__select" onChange={handleSortChange}>
                 <option value="name-asc">Name (A-Z)</option>
                 <option value="name-desc">Name (Z-A)</option>
@@ -22,4 +28,5 @@ const SortingDropdown = ({onSortChange}) => {
     );
 };
 
+// Export the SortingDropdown component for use in other parts of the application
 export default SortingDropdown;
