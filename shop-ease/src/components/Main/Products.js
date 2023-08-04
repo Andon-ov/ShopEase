@@ -4,10 +4,8 @@ import React, {useEffect, useState} from 'react';
 // Third-party libraries
 import InputSlider from 'react-input-slider';
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faArrowDown} from '@fortawesome/free-solid-svg-icons';
-import {faBars} from '@fortawesome/free-solid-svg-icons';
-import {faXmark} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown, faBars, faXmark,faPlus } from '@fortawesome/free-solid-svg-icons';
 
 // Local components and modules
 import ColorFilter from './ColorFilter/ColorFilter';
@@ -56,11 +54,11 @@ function Products({selectedCategory}) {
     };
 
     // State to track whether to activate the event handler
-    const [isResponsive, setIsResponsive] = useState(window.innerWidth <= 767);
+    const [isResponsive, setIsResponsive] = useState(window.innerWidth <= 1279);
 
     // Event handler function
     const handleResize = () => {
-        setIsResponsive(window.innerWidth <= 767);
+        setIsResponsive(window.innerWidth <= 1279);
     };
 
     // Attach the event listener on component mount
@@ -293,10 +291,7 @@ function Products({selectedCategory}) {
                     {/*    </button>*/}
                     {/*</div>*/}
 
-                    {/* Display product counters */}
-                    <div className='products__counters'>
-                        <span>{productsInGrid}&nbsp;Products  </span>
-                    </div>
+
 
                     <div className={`filters__wrapper ${filtersVisible ? '' : 'hidden'}`}>
                         <div className="filters__menu-close">
@@ -341,12 +336,15 @@ function Products({selectedCategory}) {
 
                             <button className='close__button' onClick={handleFilterToggle}>
                                 <div className='products__counters--mobile'>
-                                    <span>Show results&nbsp;  {productsInGrid}</span>
+                                    <span>Show results&nbsp;:  {productsInGrid}</span>
                                 </div>
                             </button>
                         </div>
 
-
+                        {/* Display product counters */}
+                        <div className='products__counters'>
+                            <span>Show results&nbsp;:  {productsInGrid}</span>
+                        </div>
                     </div>
                 </div>
 
@@ -360,7 +358,7 @@ function Products({selectedCategory}) {
                 {/* Sorting dropdown component */}
                 <div className='products__sort'>
                     <button id="filters__toggle" onClick={handleFilterToggle}>
-                       Filters&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+
+                       Filters
                         {/*<FontAwesomeIcon icon={faBars}/>*/}
                     </button>
                     <SortingDropdown onSortChange={handleSortChange}/>

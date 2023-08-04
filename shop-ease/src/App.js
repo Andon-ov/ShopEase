@@ -15,7 +15,7 @@ function App() {
     const leatherBagsPath = "/leather-bags";
     const beltsPath = "/belts";
     const walletsPath = "/wallets";
-    const leatherProductsPath = "/leather-products";
+    // const leatherProductsPath = "/leather-products";
 
 
     // Check if there is a preferred category in localStorage when the app starts
@@ -48,7 +48,7 @@ function App() {
                     <Route path={leatherBagsPath} element={<Products selectedCategory={selectedCategory} />} />
                     <Route path={beltsPath} element={<Products selectedCategory={selectedCategory} />} />
                     <Route path={walletsPath} element={<Products selectedCategory={selectedCategory} />} />
-                    <Route path={leatherProductsPath} element={<Products selectedCategory={selectedCategory} />} />
+                    {/*<Route path={leatherProductsPath} element={<Products selectedCategory={selectedCategory} />} />*/}
                 </Routes>
             </div>
             <Footer />

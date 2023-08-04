@@ -21,15 +21,12 @@ cd ShopEase
     Set up a virtual environment (optional but recommended):
 
 python -m venv venv
+
 source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
 
     Install the required dependencies:
 
 pip install -r requirements.txt
-
-    Apply database migrations:
-
-python manage.py migrate
 
     Run the development server:
 

@@ -115,11 +115,15 @@ button#filters__toggle{
   all: unset;
   border: unset;
   border-bottom: 1px solid black;
-  padding: 0 30px;
-  font-size: 14px;
+  font-size: 12px;
+  width: 120px;
 }
 
-/* Styling for the reset filters button */
+.products .filters .filters__sticky .filters_head{
+  margin-bottom: 20px;
+}
+
+  /* Styling for the reset filters button */
 .products .filters .filters__sticky .filters_head .resetFiltersBtn {
   all: unset;
   color: var(--mainBlackColor);
@@ -153,16 +157,28 @@ button#filters__toggle{
 .products .filters .filters__sticky .filters_head .resetFiltersBtn:hover {
   color: blue;
 }
+div.css-3g5hux-Slider{
+
+ background-color: var(--mainColor);
+}
+div.css-1ldz52l-Slider {
+  background-color: var(--mainBlackColor);
+}
+.color__filter{
+  margin: 40px;
+}
+
 
 /* Styling for the products counters */
 .products .filters .filters__sticky .products__counters {
   font-size: 12px;
+  /*text-align: center;*/
 }
 
 /* Styling for the sorting dropdown */
 .products .grid__wrapper .products__sort {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
@@ -203,3 +219,4 @@ button#filters__toggle{
 .filters__wrapper {
   transition: transform 0.3s ease-in-out;
 }
+

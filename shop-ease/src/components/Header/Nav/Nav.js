@@ -6,7 +6,7 @@ const categories = [
     {path: '/leather-bags', name: 'LEATHER BAGS'},
     {path: '/belts', name: 'BELTS'},
     {path: '/wallets', name: 'WALLETS'},
-    {path: '/leather-products', name: 'LEATHER PRODUCTS'},
+    // {path: '/leather-products', name: 'LEATHER PRODUCTS'},
 ];
 
 function Nav({onCategoryClick, selectedCategory}) {
